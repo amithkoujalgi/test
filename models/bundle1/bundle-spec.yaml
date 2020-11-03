@@ -1,0 +1,15 @@
+# This specifies the model bundle specs
+
+bundle:
+  label: 'My DL Blocks'
+  image: 'razor-tf-image'
+  
+    models:
+      - model1
+      - model1
+
+    libraries:
+      - pandas
+
+    apt-installs:
+      - poppler
