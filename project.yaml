@@ -1,0 +1,63 @@
+# This specifies the project config
+
+project:
+    # these libraries are for Jupyter
+    
+    libraries:
+        - pandas: 0.0.1
+        - numpy: 0.1.3
+        - razor: latest
+        
+    blocks:
+        - bundle:
+            label: 'My ML Blocks'
+            image: 'razor-spark-master'
+        
+    images:
+        # can have single image or multiple images for cluster-based setup
+        
+        - image-group:
+            - image:
+                name: 'razor-spark-master'
+                label: 'master'
+                technology: 'SPARK' # has to conform to platform-supported technologies
+                base: razor-python2.7-base:latest
+                apt-installs:
+                    - sphinx
+                pip-installs:
+                    - fastapi
+                env:
+                    - envvar1: '1'
+                    - envvar2: '2'
+                startup_sequence: 1
+                    
+            - image:
+                name: 'razor-spark-worker'
+                label: 'worker'
+                technology: 'SPARK' # has to conform to platform-supported technologies
+                base: razor-python2.7-base:latest
+                apt-installs:
+                    - poppler
+                pip-installs:
+                    - flask
+                env:
+                    - envvar1: '1'
+                    - envvar2: '2'            
+                startup_sequence: 2
+                
+        - image-group:
+            - image:
+                name: 'ml-image'
+                label: 'my-custom-ml-setup'
+                base: razor-python3.6-base:latest
+                technology: 'TENSORFLOW' # has to conform to platform-supported technologies
+                apt-installs:
+                    - poppler
+                pip-installs:
+                    - tensorflow: 2.0
+                    - mllib: 0.1
+                    - sklearn: 3.0
+                env:
+                    - envvar1: '1'
+                    - envvar2: '2'
+                startup_sequence: 1

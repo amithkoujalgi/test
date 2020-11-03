@@ -1,0 +1,16 @@
+# This specifies the block bundle specs
+
+bundle:
+  label: 'My ML Blocks'
+  image: 'razor-spark-master'
+  
+    blocks:
+      - block1
+      - block2
+
+    libraries:
+      - pandas
+
+    apt-installs:
+      - poppler
+    
