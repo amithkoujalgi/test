@@ -4,12 +4,12 @@ bundle:
   label: 'My DL Blocks'
   image: 'razor-tf-image'
   
-    models:
-      - model1
-      - model1
+  models:
+    - model1
+    - model1
 
-    libraries:
-      - pandas
+  libraries:
+    - pandas
 
-    apt-installs:
-      - poppler
+  apt-installs:
+    - poppler
