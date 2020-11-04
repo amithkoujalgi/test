@@ -3,7 +3,7 @@
 bundle:
   label: 'My ML Blocks'
   image: 'razor-spark-master'
-  
+
   blocks:
     - block1
     - block2
@@ -11,6 +11,6 @@ bundle:
   libraries:
     - pandas
 
-  apt-installs:
+  system-libraries:
     - poppler
     
