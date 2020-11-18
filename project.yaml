@@ -1,17 +1,17 @@
 # This specifies the project config
-
-project:
-
-    # These are used to build the project’s default image - also used for Jupyter
-    libraries:
-        - pandas: 0.0.1
-        - numpy: 0.1.3
-        - razor: latest
-    
-    system-libraries:
-        - poppler
-        - graphviz
-
-    marketplace-packages:
-        - mybundle1
-        - mybundle2
+base: razor-core:2.2.1
+pip:
+  - scikit-learn
+  - opencv>=2.0.3
+razor:
+  - image_processing
+  - spark_blocks>=2.0.3
+  - spark_tf_blocks
+  - graph_network
+apt:
+  - default-jre
+build:
+  mkdir /etc/libs
+env:
+  - TF_CONFIG="cluster-port:2555"
+  - PYSPARK_DRIVER_PYTHON=spark.pyspark.driver.python
