@@ -1,7 +1,58 @@
 {
-  "connections": [],
-  "blocks": [{
-    "name": "",
-    "label": ""
-  }]
+  "name": "Test pipeline",
+  "description": "Blah",
+  "blocks": [
+    {
+      "path": "bundle1.block1.MyTestBlock",
+      "name": "MyTestBlock",
+      "label": "Basic Block",
+      "description": "Blah",
+      "inputs": [
+        {
+          "name": "in1",
+          "label": "Basic Block",
+          "description": "Blah",
+          "transport": "Socket"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "out1",
+          "label": "Basic Block",
+          "description": "Blah",
+          "transport": "Kafka"
+        }
+      ],
+      "executor": "ContainerExecutor"
+    },
+    {
+      "path": "bundle2.block1.MyTestBlock",
+      "name": "MyTestBlock",
+      "label": "Basic Block 2",
+      "description": "Blah",
+      "inputs": [
+        {
+          "name": "in1",
+          "label": "Basic Block",
+          "description": "Blah",
+          "transport": "Socket"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "out1",
+          "label": "Basic Block",
+          "description": "Blah",
+          "transport": "Kafka"
+        }
+      ],
+      "executor": "ContainerExecutor"
+    }
+  ],
+  "connections": [
+    {
+      "source": "bundle1.block1.MyTestBlock.out1",
+      "target": "bundle2.block1.MyTestBlock.in1"
+    }
+  ]
 }
