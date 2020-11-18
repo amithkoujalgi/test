@@ -9,58 +9,9 @@ project:
         - razor: latest
     
     system-libraries:
-        # If the image is debian-based, apt installations would work. If Alpine-based, apk installations would be needed and so on
         - poppler
+        - graphviz
 
-    # Custom images
-    images:
-        # can have single image or multiple images for cluster-based setup
-        
-        - image-group:
-            - image:
-                name: 'razor-spark-master'
-                label: 'master'
-                technology: 'SPARK' # has to conform to platform-supported technologies
-                base: razor-python2.7-base:latest # has to be one of the approved images
-                system-libraries:
-                    # If the image is debian-based, apt installations would work. If Alpine-based, apk installations would be needed and so on
-                    - sphinx
-                libraries:
-                    - fastapi
-                env:
-                    - envvar1: '1'
-                    - envvar2: '2'
-                startup_sequence: 1 # defaulted to 1 if not specified
-                    
-            - image:
-                name: 'razor-spark-worker'
-                label: 'worker'
-                technology: 'SPARK' # has to conform to platform-supported technologies
-                base: razor-python2.7-base:latest # has to be one of the approved images
-                system-libraries:
-                    # If the image is debian-based, apt installations would work. If Alpine-based, apk installations would be needed and so on
-                    - poppler
-                libraries:
-                    - flask
-                env:
-                    - envvar1: '1'
-                    - envvar2: '2'            
-                startup_sequence: 2 # defaulted to 1 if not specified
-                
-        - image-group:
-            - image:
-                name: 'ml-image'
-                label: 'my-custom-ml-setup'
-                base: razor-python3.6-base:latest # has to be one of the approved images
-                technology: 'TENSORFLOW' # has to conform to platform-supported technologies
-                system-libraries:
-                    # If the image is debian-based, apt installations would work. If Alpine-based, apk installations would be needed and so on
-                    - poppler
-                libraries:
-                    - tensorflow: 2.0
-                    - mllib: 0.1
-                    - sklearn: 3.0
-                env:
-                    - envvar1: '1'
-                    - envvar2: '2'
-                startup_sequence: 1 # defaulted to 1 if not specified
+    marketplace-packages:
+        - mybundle1
+        - mybundle2

@@ -1,8 +1,8 @@
 # This specifies the block bundle specs
+# Uses Ubuntu as a base image
 
 bundle:
   label: 'My ML Blocks'
-  image: 'razor-spark-master'
 
   blocks:
     - block1
@@ -13,3 +13,7 @@ bundle:
 
   system-libraries:
     - poppler
+
+  env:
+    - envvar1: value
+    - envvar2: value
