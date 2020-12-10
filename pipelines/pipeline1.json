@@ -7,6 +7,7 @@
       "name": "MyTestBlock",
       "label": "Basic Block",
       "description": "Blah",
+      "image": "mktplace_tag:1.0",
       "inputs": [
         {
           "name": "in1",
@@ -30,6 +31,7 @@
       "name": "MyTestBlock",
       "label": "Basic Block 2",
       "description": "Blah",
+      "image": "custom_tag:1.0",
       "inputs": [
         {
           "name": "in1",
@@ -47,6 +49,15 @@
         }
       ],
       "executor": "ContainerExecutor"
+    }
+  ],
+  "processes": [
+    {
+      "name": "Process1",
+      "blocks": [
+        "bundle1.block1.MyTestBlock",
+        "bundle2.block2.MyTestBlock"
+      ]
     }
   ],
   "connections": [
