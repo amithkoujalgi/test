@@ -1,7 +1,7 @@
 from razor import flow as rf
-from readers.utils.my_util import MyUtil
+from writers.utils.my_util import MyUtil
 
 @rf.block
-class CSVReader:
+class CSVWriter:
     def run(self):
         pass

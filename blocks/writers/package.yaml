@@ -1,0 +1,44 @@
+# This specifies the block bundle specs
+# Uses the project's base image
+
+bundle_name: writers
+description: Blah
+label: Writer Blocks
+version: 0.1
+image: my_custom_image:0.1 # if user has a custom image for the block bundle, it will be specified here.
+libraries:
+  - pandas>=1.3
+  - opencsv==0.8
+system_dependencies:
+  - poppler
+  - graphviz
+environment:
+  - TMP_FS_PATH: /opt/tmp
+commands:
+  - "cmd1"
+  - "cmd2"
+category: "Connectors.Target Connectors"
+blocks:
+  - name: csv_writer
+    label: 'CSV Writer'
+    description: "..."
+    inputs:
+      - name: inp1
+        dtype: object # supported dtypes: object, array, int, string, boolean
+        default_value: "{ }" # if the dtype is array or object, the default value will be a stringified value
+        description: ""
+        required: true
+      - name: inp2
+        dtype: string
+        default_value: "blah"
+        description: ""
+        required: true
+    outputs:
+      - name: out1
+        dtype: array
+        default_value: "[ ]" # if the dtype is array or object, the default value will be a stringified value
+        description: ""
+      - name: out2
+        dtype: int
+        default_value: 0
+        description: ""
