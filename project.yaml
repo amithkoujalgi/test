@@ -15,3 +15,6 @@ build:
 env:
   - TF_CONFIG="cluster-port:2555"
   - PYSPARK_DRIVER_PYTHON=spark.pyspark.driver.python
+commands:
+  - "cmd1"
+  - "cmd2"
