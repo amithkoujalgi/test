@@ -153,12 +153,13 @@
       "sourceBlockId": "653e4d93-7aa5-422d-9e6f-248abbb1a372",
       "targetBlockId": "d3702794-cc48-4acb-a238-583dd3ef6fc8",
       "sourceOutput": {
-        "dynamic": true,
-        "name": "content.key1"
+        "__comment": "For dynamic input/output, multiple connections can be made from a dent. If dynamic, a connection can be made to that input/output dent over specific keys. For example, a block's output can be connected to a dynamic input dent of another block on specific key like this: Block1-Output1 --> Block2-Input1.key1 (Ignore the __comment field in real objects)",
+        "dynamic": false,
+        "name": "content"
       },
       "targetInput": {
-        "dynamic": false,
-        "name": "content.key2"
+        "dynamic": true,
+        "name": "content.key1"
       }
     }
   ],
