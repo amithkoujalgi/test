@@ -21,24 +21,38 @@ category: "Connectors.Source Connectors"
 blocks:
   - name: csv_reader
     label: 'CSV Reader'
+    classname: 'CSVReader'
     description: "..."
+    executors:
+      - ContainerExecutor # Resource specs would be available as part of the executors
+      - SparkExecutor
     inputs:
       - name: inp1
-        dtype: object # supported dtypes: object, array, int, string, boolean
+        label: ""
+        dtype: object # supported dtypes: object, array, integer, string, boolean, dynamic-list[integer/string/boolean/object/array], dynamic-object[integer/string/boolean/object/array]
         default_value: "{ }" # if the dtype is array or object, the default value will be a stringified value
         description: ""
         required: true
+        type: series
       - name: inp2
+        label: ""
         dtype: string
         default_value: "blah"
         description: ""
         required: true
+        type: atomic
     outputs:
       - name: out1
+        label: ""
         dtype: array
         default_value: "[ ]" # if the dtype is array or object, the default value will be a stringified value
         description: ""
+        type: series
       - name: out2
+        label: ""
         dtype: int
         default_value: 0
         description: ""
+        type: atomic
+    adapter:
+    validator:
