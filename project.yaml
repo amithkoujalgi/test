@@ -16,6 +16,11 @@ razor:
       - package-sysdep1
       - package-sysdep2
   - package: spark_blocks>=2.0.3
+      - package-lib3
+      - package-lib4
+    sys-deps:
+      - package-sysdep3
+      - package-sysdep4
   - package: spark_tf_blocks
   - package: graph_network
 apt:
