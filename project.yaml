@@ -1,13 +1,23 @@
 # This specifies the project config
 base: razor-core:2.2.1
+base_libs: # list of libs which are part of the image. On changing image, this list gets refreshed.
+  - baselib1
+  - baselib2
 pip:
   - scikit-learn
   - opencv>=2.0.3
 razor:
-  - image_processing
-  - spark_blocks>=2.0.3
-  - spark_tf_blocks
-  - graph_network
+  - package: image_processing:0.2
+    source: "marketplace/tenant-repo"
+    libs:
+      - package-lib1
+      - package-lib2
+    sys-deps:
+      - package-sysdep1
+      - package-sysdep2
+  - package: spark_blocks>=2.0.3
+  - package: spark_tf_blocks
+  - package: graph_network
 apt:
   - default-jre
 build:
