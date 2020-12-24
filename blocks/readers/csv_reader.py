@@ -4,7 +4,7 @@ from readers.utils.my_util import MyUtil
 @rf.block
 class CSVReader:
 
-    source: rf.INput[str] = None
+    source: rf.Input[str] = None
     content: rf.Output[str] = None
 
     def run(self):
