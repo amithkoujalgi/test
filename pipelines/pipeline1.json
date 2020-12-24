@@ -5,7 +5,6 @@
       "id": "653e4d93-7aa5-422d-9e6f-248abbb1a372",
       "name": "CSV Reader_1",
       "versionHash": "f40b737e2ffa4d3888218ff233317205",
-      "technology": "PYTHON",
       "executionType": "ProcessExecutor",
       "resourceRequirement": {
         "cores": 1,
@@ -13,7 +12,6 @@
         "useGpu": false,
         "gpu": null,
         "useGpuIfAvailable": false,
-        "technology": "PYTHON",
         "runEnv": "CPU",
         "additionalEnv": null,
         "clusterConfiguration": null
@@ -77,7 +75,6 @@
       "id": "d3702794-cc48-4acb-a238-583dd3ef6fc8",
       "name": "CSV Writer_1",
       "version": "2246bd7f-7d57-4597-983f-5f6c31753fcb",
-      "technology": "PYTHON",
       "executionType": "ProcessExecutor",
       "resourceRequirement": {
         "cores": null,
@@ -159,7 +156,7 @@
         "dynamic": true,
         "name": "content.key1"
       },
-      "targetInput":{
+      "targetInput": {
         "dynamic": false,
         "name": "content.key2"
       }
