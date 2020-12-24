@@ -2,11 +2,11 @@
   "name": "Read Write CSV",
   "blocks": [
     {
-      "id": "653e4d93-7aa5-422d-9e6f-248abbb1a372",
+      "id": "653e4d93-7aa5-422d-9e6f-248abbb1a372 - this is just for the UI reference",
       "name": "CSV Reader_1",
-      "versionHash": "f40b737e2ffa4d3888218ff233317205",
+      "versionHash": "f40b737e2ffa4d3888218ff233317205 - this is used for keeping track of block instance changes. The block source may be new and the instance may be pointing to old block source. This field tells the difference.",
       "executionType": "ProcessExecutor",
-      "resourceRequirement": {
+      "resourceRequirements": {
         "cores": 1,
         "memory": 1024,
         "useGpu": false,
@@ -76,7 +76,7 @@
       "name": "CSV Writer_1",
       "version": "2246bd7f-7d57-4597-983f-5f6c31753fcb",
       "executionType": "ProcessExecutor",
-      "resourceRequirement": {
+      "resourceRequirements": {
         "cores": null,
         "memory": null,
         "useGpu": false,
