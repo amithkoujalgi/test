@@ -177,7 +177,17 @@
     }
   ],
   "validationInfo": {
-    "messages": {},
+    "__comment": "This maintains the state of the pipeline as valid or invalid. Validation errors/warnings are stored too. (Ignore the __comment field in real objects)",
+    "messages": [
+      {
+        "msg": "blah",
+        "type": "error"
+      },
+      {
+        "msg": "blah",
+        "type": "warning"
+      }
+    ],
     "valid": true
   },
   "resourceRequirements": {
@@ -202,10 +212,11 @@
   "lastModifiedBy": "a0d60b44-b87a-4361-b36d-3affa7225563",
   "lastModifiedOn": "2020-11-23T06:07:36.385+00:00",
   "uiData": "{\"blocks\":{\"653e4d93-7aa5-422d-9e6f-248abbb1a372\":{\"position\":{\"x\":100,\"y\":120.5}},\"d3702794-cc48-4acb-a238-583dd3ef6fc8\":{\"position\":{\"x\":415.79999999999995,\"y\":120.5}}}}",
-  "variableUiData": "{}",
+  "variableUiData": "{} - this is just for the UI reference",
   "blockGroups": [
     {
-      "groupId": "",
+      "__comment": "Block groups are logical grouping of block instances which can have common properties. Single process operator is one such grouping. (Ignore the __comment field in real objects)",
+      "groupId": "952e4d93-7aa5-422d-9ea3f-248abbb1a243",
       "name": "",
       "blocks": [
         "653e4d93-7aa5-422d-9e6f-248abbb1a372"
