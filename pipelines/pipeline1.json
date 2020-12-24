@@ -1,70 +1,196 @@
 {
-  "name": "Test pipeline",
-  "description": "Blah",
+  "name": "Sentiment Scraper",
+  "status": "Valid Draft",
+  "createdBy": "a0d60b44-b87a-4361-b36d-3affa7225563",
+  "createdOn": "2020-11-10T08:51:45.000+00:00",
+  "lastModifiedBy": "a0d60b44-b87a-4361-b36d-3affa7225563",
+  "lastModifiedOn": "2020-11-23T06:07:36.385+00:00",
   "blocks": [
     {
-      "path": "bundle1.block1.MyTestBlock",
-      "name": "MyTestBlock",
-      "label": "Basic Block",
-      "description": "Blah",
-      "image": "mktplace_tag:1.0",
-      "inputs": [
-        {
-          "name": "in1",
-          "label": "Basic Block",
-          "description": "Blah",
-          "transport": "Socket"
+      "id": "653e4d93-7aa5-422d-9e6f-248abbb1a372",
+      "name": "Scraper_1",
+      "version": "f40b737e-2ffa-4d38-8821-8ff233317205",
+      "technology": "PYTHON",
+      "executionType": "ProcessExecutor",
+      "resourceRequirement": {
+        "cores": 1,
+        "memory": 1024,
+        "useGpu": false,
+        "gpu": null,
+        "useGpuIfAvailable": false,
+        "technology": "PYTHON",
+        "runEnv": "CPU",
+        "additionalEnv": null,
+        "clusterConfiguration": null
+      },
+      "artifactBlockName": "CSV Reader",
+      "artifactBundleName": "readers",
+      "artifactBundleType": "PROJECT",
+      "className": "Scraper",
+      "category": "Connectors.Source Connectors",
+      "inputProperty": {
+        "url": {
+          "value": "https://www.rottentomatoes.com/m/pulp_fiction/reviews",
+          "doc": null,
+          "label": "url",
+          "dataType": "string",
+          "required": false,
+          "supportVar": false,
+          "series": false,
+          "adapter": "",
+          "transport": "",
+          "order": null,
+          "rightPaneRenderBlueprint": null,
+          "variable": false,
+          "default": "",
+          "sourceId": null,
+          "sourceName": null,
+          "inferredType": "STATIC",
+          "renderType": null,
+          "requestDefinition": null
         }
-      ],
-      "outputs": [
-        {
-          "name": "out1",
-          "label": "Basic Block",
-          "description": "Blah",
-          "transport": "Kafka"
+      },
+      "outputProperty": {
+        "content": {
+          "value": "",
+          "doc": null,
+          "label": null,
+          "dataType": null,
+          "required": false,
+          "supportVar": true,
+          "series": true,
+          "adapter": "",
+          "transport": "KAFKA",
+          "order": null,
+          "rightPaneRenderBlueprint": null,
+          "variable": false,
+          "default": null,
+          "sourceId": null,
+          "sourceName": null,
+          "inferredType": null,
+          "renderType": null,
+          "requestDefinition": null
         }
-      ],
-      "executor": "ContainerExecutor"
+      },
+      "dynamicDependencies": [],
+      "updateAvailable": false,
+      "comments": null,
+      "inputOptions": [],
+      "outputOptions": [],
+      "processId": null
     },
     {
-      "path": "bundle2.block1.MyTestBlock",
-      "name": "MyTestBlock",
-      "label": "Basic Block 2",
-      "description": "Blah",
-      "image": "custom_tag:1.0",
-      "inputs": [
-        {
-          "name": "in1",
-          "label": "Basic Block",
-          "description": "Blah",
-          "transport": "Socket"
+      "id": "d3702794-cc48-4acb-a238-583dd3ef6fc8",
+      "name": "Writer_1",
+      "version": "2246bd7f-7d57-4597-983f-5f6c31753fcb",
+      "technology": "PYTHON",
+      "executionType": "ProcessExecutor",
+      "resourceRequirement": {
+        "cores": null,
+        "memory": null,
+        "useGpu": false,
+        "gpu": null,
+        "useGpuIfAvailable": false,
+        "runEnv": null,
+        "additionalEnv": null,
+        "clusterConfiguration": null
+      },
+      "artifactBlockName": "CSV Writer",
+      "artifactBundleName": "Writer_Blocks",
+      "artifactBundleType": "PROJECT",
+      "category": "Connectors.Target Connectors",
+      "inputProperty": {
+        "data": {
+          "value": "",
+          "doc": null,
+          "label": "data",
+          "dataType": "string",
+          "required": false,
+          "supportVar": false,
+          "series": true,
+          "adapter": "",
+          "transport": "",
+          "order": null,
+          "hidden": false,
+          "rightPaneRenderBlueprint": null,
+          "optionalParameter": false,
+          "variable": false,
+          "default": "",
+          "sourceId": "653e4d93-7aa5-422d-9e6f-248abbb1a372",
+          "sourceName": "content",
+          "inferredType": "BLOCK",
+          "renderType": null,
+          "requestDefinition": null
         }
-      ],
-      "outputs": [
-        {
-          "name": "out1",
-          "label": "Basic Block",
-          "description": "Blah",
-          "transport": "Kafka"
+      },
+      "outputProperty": {
+        "output": {
+          "value": "",
+          "doc": null,
+          "label": null,
+          "dataType": null,
+          "required": false,
+          "supportVar": true,
+          "series": true,
+          "adapter": "",
+          "transport": "KAFKA",
+          "order": null,
+          "hidden": false,
+          "rightPaneRenderBlueprint": null,
+          "optionalParameter": false,
+          "variable": false,
+          "default": null,
+          "sourceId": null,
+          "sourceName": null,
+          "inferredType": null,
+          "renderType": null,
+          "requestDefinition": null
         }
-      ],
-      "executor": "ContainerExecutor"
-    }
-  ],
-  "processes": [
-    {
-      "name": "Process1",
-      "blocks": [
-        "bundle1.block1.MyTestBlock",
-        "bundle2.block2.MyTestBlock"
-      ]
+      },
+      "dynamicDependencies": [],
+      "updateAvailable": false,
+      "comments": null,
+      "inputOptions": [],
+      "outputOptions": [],
+      "className": "Sentiment",
+      "processId": null
     }
   ],
   "connections": [
     {
-      "source": "bundle1.block1.MyTestBlock.out1",
-      "target": "bundle2.block1.MyTestBlock.in1"
+      "id": "a0d60b44-b87a-4361-b36d-3affa7225563",
+      "transport": "KAFKA",
+      "targetInputName": "data",
+      "sourceBlockId": "653e4d93-7aa5-422d-9e6f-248abbb1a372",
+      "targetBlockId": "d3702794-cc48-4acb-a238-583dd3ef6fc8",
+      "sourceOutput": "content",
+      "targetInput": "data"
     }
-  ]
+  ],
+  "validateResponse": {
+    "messages": {},
+    "valid": true
+  },
+  "uiData": "{\"blocks\":{\"653e4d93-7aa5-422d-9e6f-248abbb1a372\":{\"position\":{\"x\":100,\"y\":120.5}},\"d3702794-cc48-4acb-a238-583dd3ef6fc8\":{\"position\":{\"x\":415.79999999999995,\"y\":120.5}}}}",
+  "variableUiData": "{}",
+  "resourceRequirements": {
+    "cores": 1,
+    "memory": 1024,
+    "useGpu": false,
+    "gpu": 0,
+    "useGpuIfAvailable": false,
+    "runEnv": "CPU",
+    "technology": "PYTHON",
+    "additionalEnv": null,
+    "clusterConfiguration": {
+      "worker": null,
+      "workerCore": null,
+      "workerMemory": null,
+      "numberOfInstances": null,
+      "maxServerCount": null
+    }
+  },
+  "processInfo": null,
+  "processList": null,
+  "infraResourceEstimation": null
 }
-
