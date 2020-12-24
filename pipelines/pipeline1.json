@@ -198,7 +198,6 @@
     "gpu": 0,
     "useGpuIfAvailable": false,
     "runEnv": "CPU",
-    "technology": "PYTHON",
     "additionalEnv": null,
     "clusterConfiguration": {
       "worker": null,

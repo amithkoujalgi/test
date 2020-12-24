@@ -5,7 +5,7 @@ from readers.utils.my_util import MyUtil
 class CSVReader:
 
     source: rf.Input[str] = None
-    content: rf.Output[str] = None
+    content: rf.SeriesOutput[str] = None
 
     def run(self):
         self.content.put(self.source)
