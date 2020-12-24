@@ -1,10 +1,6 @@
 {
   "name": "Read Write CSV",
   "status": "Valid Draft",
-  "createdBy": "a0d60b44-b87a-4361-b36d-3affa7225563",
-  "createdOn": "2020-11-10T08:51:45.000+00:00",
-  "lastModifiedBy": "a0d60b44-b87a-4361-b36d-3affa7225563",
-  "lastModifiedOn": "2020-11-23T06:07:36.385+00:00",
   "blocks": [
     {
       "id": "653e4d93-7aa5-422d-9e6f-248abbb1a372",
@@ -168,12 +164,24 @@
       "targetInputName": "content"
     }
   ],
+  "pipelineVariables": [
+    {
+      "name": "var1",
+      "type": "string",
+      "value": "",
+      "description": ""
+    },
+    {
+      "name": "var2",
+      "type": "object",
+      "value": {},
+      "description": ""
+    }
+  ],
   "validateResponse": {
     "messages": {},
     "valid": true
   },
-  "uiData": "{\"blocks\":{\"653e4d93-7aa5-422d-9e6f-248abbb1a372\":{\"position\":{\"x\":100,\"y\":120.5}},\"d3702794-cc48-4acb-a238-583dd3ef6fc8\":{\"position\":{\"x\":415.79999999999995,\"y\":120.5}}}}",
-  "variableUiData": "{}",
   "resourceRequirements": {
     "cores": 1,
     "memory": 1024,
@@ -191,8 +199,13 @@
       "maxServerCount": null
     }
   },
+  "createdBy": "a0d60b44-b87a-4361-b36d-3affa7225563",
+  "createdOn": "2020-11-10T08:51:45.000+00:00",
+  "lastModifiedBy": "a0d60b44-b87a-4361-b36d-3affa7225563",
+  "lastModifiedOn": "2020-11-23T06:07:36.385+00:00",
+  "uiData": "{\"blocks\":{\"653e4d93-7aa5-422d-9e6f-248abbb1a372\":{\"position\":{\"x\":100,\"y\":120.5}},\"d3702794-cc48-4acb-a238-583dd3ef6fc8\":{\"position\":{\"x\":415.79999999999995,\"y\":120.5}}}}",
+  "variableUiData": "{}",
   "processInfo": null,
   "processList": null,
-  "pipelineVariables": [],
   "infraResourceEstimation": null
 }
