@@ -1,5 +1,5 @@
 {
-  "name": "Sentiment Scraper",
+  "name": "Read Write CSV",
   "status": "Valid Draft",
   "createdBy": "a0d60b44-b87a-4361-b36d-3affa7225563",
   "createdOn": "2020-11-10T08:51:45.000+00:00",
@@ -8,7 +8,7 @@
   "blocks": [
     {
       "id": "653e4d93-7aa5-422d-9e6f-248abbb1a372",
-      "name": "Scraper_1",
+      "name": "CSV Reader_1",
       "version": "f40b737e-2ffa-4d38-8821-8ff233317205",
       "technology": "PYTHON",
       "executionType": "ProcessExecutor",
@@ -26,10 +26,10 @@
       "artifactBlockName": "CSV Reader",
       "artifactBundleName": "readers",
       "artifactBundleType": "PROJECT",
-      "className": "Scraper",
+      "className": "CSVReader",
       "category": "Connectors.Source Connectors",
       "inputProperty": {
-        "url": {
+        "source": {
           "value": "https://www.rottentomatoes.com/m/pulp_fiction/reviews",
           "doc": null,
           "label": "url",
@@ -81,7 +81,7 @@
     },
     {
       "id": "d3702794-cc48-4acb-a238-583dd3ef6fc8",
-      "name": "Writer_1",
+      "name": "CSV Writer_1",
       "version": "2246bd7f-7d57-4597-983f-5f6c31753fcb",
       "technology": "PYTHON",
       "executionType": "ProcessExecutor",
@@ -96,11 +96,11 @@
         "clusterConfiguration": null
       },
       "artifactBlockName": "CSV Writer",
-      "artifactBundleName": "Writer_Blocks",
+      "artifactBundleName": "writers",
       "artifactBundleType": "PROJECT",
       "category": "Connectors.Target Connectors",
       "inputProperty": {
-        "data": {
+        "content": {
           "value": "",
           "doc": null,
           "label": "data",
@@ -124,7 +124,7 @@
         }
       },
       "outputProperty": {
-        "output": {
+        "target": {
           "value": "",
           "doc": null,
           "label": null,
@@ -152,7 +152,7 @@
       "comments": null,
       "inputOptions": [],
       "outputOptions": [],
-      "className": "Sentiment",
+      "className": "CSVWriter",
       "processId": null
     }
   ],
@@ -160,11 +160,12 @@
     {
       "id": "a0d60b44-b87a-4361-b36d-3affa7225563",
       "transport": "KAFKA",
-      "targetInputName": "data",
       "sourceBlockId": "653e4d93-7aa5-422d-9e6f-248abbb1a372",
       "targetBlockId": "d3702794-cc48-4acb-a238-583dd3ef6fc8",
       "sourceOutput": "content",
-      "targetInput": "data"
+      "targetInput": "content",
+      "sourceInputName": "content",
+      "targetInputName": "content"
     }
   ],
   "validateResponse": {
@@ -192,5 +193,6 @@
   },
   "processInfo": null,
   "processList": null,
+  "pipelineVariables": [],
   "infraResourceEstimation": null
 }

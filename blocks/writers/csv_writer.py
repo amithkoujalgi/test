@@ -3,5 +3,9 @@ from writers.utils.my_util import MyUtil
 
 @rf.block
 class CSVWriter:
+
+    content: rf.Output[str] = None
+    target: rf.Output[str] = None
+
     def run(self):
-        pass
+        self.target.put(self.content)

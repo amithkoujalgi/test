@@ -3,5 +3,8 @@ from readers.utils.my_util import MyUtil
 
 @rf.block
 class CSVReader:
+    source: rf.Output[str] = None
+    content: rf.Output[str] = None
+
     def run(self):
-        pass
+        self.content.put(self.source)
