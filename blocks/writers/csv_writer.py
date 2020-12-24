@@ -4,7 +4,7 @@ from writers.utils.my_util import MyUtil
 @rf.block
 class CSVWriter:
 
-    content: rf.Output[str] = None
+    content: rf.Input[str] = None
     target: rf.Output[str] = None
 
     def run(self):
