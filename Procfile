@@ -1,1 +1,1 @@
-web: sh ./server/run.sh
+web: cd ./server && sh run.sh
