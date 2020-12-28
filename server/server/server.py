@@ -116,7 +116,7 @@ class GenDockerfile:
                 docker_file_lines.append(f'ENV {published_env_var.variable}="{published_env_var.value}"')
 
             docker_file_lines.append(
-                f'RUN pip install {published_lib.name}=={published_lib.version} \n\t--extra-index-url={repo} \n\t--trusted-host={repo.replace("https", "")}')
+                f'RUN pip install {published_lib.name}=={published_lib.version} \ \n\t--extra-index-url={repo} \ \n\t--trusted-host={repo.replace("https", "")}')
 
             docker_file_lines.append(
                 f'# END: Config for user added published package: {published_lib.name}\n')
