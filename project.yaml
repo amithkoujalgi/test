@@ -15,10 +15,8 @@ base_image_libraries:
     - name: scipy
       version: 2.9
   system_packages:
-    - name: File_OS_39
-      version: 1.9
-    - name: File_OS_35
-      version: 2.9
+    - name: poppler
+    - name: graphviz
   environment_variables:
     - variable: tf_config
       type: String
@@ -30,7 +28,7 @@ base_image_libraries:
       desc: Desc regarding env variable
 project_libraries:
   published_packages:
-    - package: image_processing
+    - name: image_processing
       version: 0.2
       source: "marketplace/tenant-repo"
       added_by: 7b1dac56-5a40-4e9c-a204-aca62da1b145
@@ -52,13 +50,11 @@ project_libraries:
           updated_on: "2020-09-01 09:01:15"
       system_packages:
         - name: File_OS_39
-          version: 1.9
           added_by: 7b1dac56-5a40-4e9c-a204-aca62da1b145
           added_on: "2020-09-01 09:01:15"
           updated_by: 7b1dac56-5a40-4e9c-a204-aca62da1b145
           updated_on: "2020-09-01 09:01:15"
         - name: File_OS_35
-          version: 2.9
           added_by: 7b1dac56-5a40-4e9c-a204-aca62da1b145
           added_on: "2020-09-01 09:01:15"
           updated_by: 7b1dac56-5a40-4e9c-a204-aca62da1b145
@@ -88,8 +84,7 @@ project_libraries:
       updated_by: 7b1dac56-5a40-4e9c-a204-aca62da1b145
       updated_on: "2020-09-01 09:01:15"
   system_packages:
-    - name: default-jre
-      version: 1.9
+    - name: default-jre-1.9
       added_by: 7b1dac56-5a40-4e9c-a204-aca62da1b145
       added_on: "2020-09-01 09:01:15"
       updated_by: 7b1dac56-5a40-4e9c-a204-aca62da1b145

@@ -41,7 +41,7 @@ class PublishedPackageSystemPackage(BaseModel):
 
 
 class PublishedPackage(BaseModel):
-    package: Optional[str] = None
+    name: Optional[str] = None
     version: Optional[float] = None
     source: Optional[str] = None
     added_by: Optional[str] = None
