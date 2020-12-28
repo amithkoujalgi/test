@@ -15,7 +15,7 @@ class BaseImageLibrariesPipPackage(BaseModel):
     version: Optional[float] = None
 
 
-class BaseImageLibraries(BaseModel):
+class BaseImageConfig(BaseModel):
     pip_packages: Optional[List[BaseImageLibrariesPipPackage]] = None
     system_packages: Optional[List[BaseImageLibrariesPipPackage]] = None
     environment_variables: Optional[List[EnvironmentVariable]] = None
@@ -69,7 +69,7 @@ class ProjectConfig(BaseModel):
     base_image: Optional[str] = None
     base_os: Optional[str] = None
     base_os_flavor: Optional[str] = None
-    base_image_libraries: Optional[BaseImageLibraries] = None
+    base_image_config: Optional[BaseImageConfig] = None
     project_libraries: Optional[ProjectLibraries] = None
     environment_variables: Optional[List[EnvironmentVariable]] = None
     additional_commands: Optional[List[str]] = None

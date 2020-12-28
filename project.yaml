@@ -8,19 +8,21 @@ updated_on: "2020-09-01 09:01:15"
 base_image: razor-core:2.2.1
 base_os: ubuntu-20-lts
 base_os_flavor: debian
-base_image_libraries:
+base_image_config:
   pip_packages:
-    - name: numpy
+    - name: razor-flow
       version: 1.9
-    - name: scipy
+    - name: razor-fs
       version: 2.9
+    - name: razor-ds
+      version: 1.2
   system_packages:
     - name: poppler
     - name: graphviz
   environment_variables:
-    - variable: tf_config
+    - variable: TF_CONFIG
       type: String
-      value: cluster-port:432
+      value: cluster_host:cluster_port
       desc: Desc regarding env variable
     - variable: pyspark-python
       type: String
@@ -30,7 +32,7 @@ project_libraries:
   published_packages:
     - name: image_processing
       version: 0.2
-      source: "marketplace/tenant-repo"
+      source: "marketplace"
       added_by: 7b1dac56-5a40-4e9c-a204-aca62da1b145
       added_on: "2020-09-01 09:01:15"
       updated_by: 7b1dac56-5a40-4e9c-a204-aca62da1b145
@@ -49,22 +51,62 @@ project_libraries:
           updated_by: 7b1dac56-5a40-4e9c-a204-aca62da1b145
           updated_on: "2020-09-01 09:01:15"
       system_packages:
-        - name: File_OS_39
+        - name: poppler
           added_by: 7b1dac56-5a40-4e9c-a204-aca62da1b145
           added_on: "2020-09-01 09:01:15"
           updated_by: 7b1dac56-5a40-4e9c-a204-aca62da1b145
           updated_on: "2020-09-01 09:01:15"
-        - name: File_OS_35
+        - name: graphviz
           added_by: 7b1dac56-5a40-4e9c-a204-aca62da1b145
           added_on: "2020-09-01 09:01:15"
           updated_by: 7b1dac56-5a40-4e9c-a204-aca62da1b145
           updated_on: "2020-09-01 09:01:15"
       environment_variables:
-        - variable: tf_config
+        - variable: TF_CONFIG
           type: String
-          value: cluster-port:432
+          value: cluster_host:cluster_port
           desc: Desc regarding env variable
-        - variable: pyspark-python
+        - variable: PYSPARK_PYTHON
+          type: String
+          value: spark.python.driver
+          desc: Desc regarding env variable
+    - name: sentiment_analysis
+      version: 1.1
+      source: "tenant"
+      added_by: 7b1dac56-5a40-4e9c-a204-aca62da1b145
+      added_on: "2020-09-01 09:01:15"
+      updated_by: 7b1dac56-5a40-4e9c-a204-aca62da1b145
+      updated_on: "2020-09-01 09:01:15"
+      pip_packages:
+        - name: numpy
+          version: 1.9
+          added_by: 7b1dac56-5a40-4e9c-a204-aca62da1b145
+          added_on: "2020-09-01 09:01:15"
+          updated_by: 7b1dac56-5a40-4e9c-a204-aca62da1b145
+          updated_on: "2020-09-01 09:01:15"
+        - name: scipy
+          version: 2.9
+          added_by: 7b1dac56-5a40-4e9c-a204-aca62da1b145
+          added_on: "2020-09-01 09:01:15"
+          updated_by: 7b1dac56-5a40-4e9c-a204-aca62da1b145
+          updated_on: "2020-09-01 09:01:15"
+      system_packages:
+        - name: poppler
+          added_by: 7b1dac56-5a40-4e9c-a204-aca62da1b145
+          added_on: "2020-09-01 09:01:15"
+          updated_by: 7b1dac56-5a40-4e9c-a204-aca62da1b145
+          updated_on: "2020-09-01 09:01:15"
+        - name: graphviz
+          added_by: 7b1dac56-5a40-4e9c-a204-aca62da1b145
+          added_on: "2020-09-01 09:01:15"
+          updated_by: 7b1dac56-5a40-4e9c-a204-aca62da1b145
+          updated_on: "2020-09-01 09:01:15"
+      environment_variables:
+        - variable: TF_CONFIG
+          type: String
+          value: cluster_host:cluster_port
+          desc: Desc regarding env variable
+        - variable: PYSPARK_PYTHON
           type: String
           value: spark.python.driver
           desc: Desc regarding env variable
@@ -90,9 +132,9 @@ project_libraries:
       updated_by: 7b1dac56-5a40-4e9c-a204-aca62da1b145
       updated_on: "2020-09-01 09:01:15"
 environment_variables:
-  - variable: tf_config
+  - variable: TF_CONFIG
     type: String
-    value: cluster-port:432
+    value: cluster_host:cluster_port
     desc: Desc regarding env variable
   - variable: pyspark-python
     type: String
