@@ -53,8 +53,8 @@ class GenDockerfile:
     def gen(self):
         docker_file_lines = []
         docker_file_lines.append(f"FROM {self.proj_cfg.base_image}\n")
-        docker_file_lines.append(f'Label maintainer="Tenant User - XYZ <xyc@somedomain.com>"')
-        docker_file_lines.append(f'Label project="{self.proj_cfg.name}"')
+        docker_file_lines.append(f'LABEL maintainer="Tenant User - XYZ <xyc@somedomain.com>"')
+        docker_file_lines.append(f'LABEL project="{self.proj_cfg.name}"')
         docker_file_lines.append(f'LABEL description="{self.proj_cfg.description}"')
         docker_file_lines.append(f'LABEL base_os="{self.proj_cfg.base_os}"')
         docker_file_lines.append(f'LABEL base_os_flavor="{self.proj_cfg.base_os_flavor}"')
