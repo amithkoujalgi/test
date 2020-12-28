@@ -24,7 +24,7 @@ base_image_config:
       type: String
       value: cluster_host:cluster_port
       desc: Desc regarding env variable
-    - variable: pyspark-python
+    - variable: PYSPARK_PYTHON
       type: String
       value: spark.python.driver
       desc: Desc regarding env variable
@@ -136,7 +136,7 @@ environment_variables:
     type: String
     value: cluster_host:cluster_port
     desc: Desc regarding env variable
-  - variable: pyspark-python
+  - variable: PYSPARK_PYTHON
     type: String
     value: spark.python.driver
     desc: Desc regarding env variable
