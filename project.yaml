@@ -2,10 +2,12 @@
 name: Sample Project
 description: This is a sample description
 added_by: 7b1dac56-5a40-4e9c-a204-aca62da1b145
-added_on: 2020-09-01 09:01:15
+added_on: "2020-09-01 09:01:15"
 updated_by: 7b1dac56-5a40-4e9c-a204-aca62da1b145
-updated_on: 2020-09-01 09:01:15
-base: razor-core:2.2.1
+updated_on: "2020-09-01 09:01:15"
+base_image: razor-core:2.2.1
+base_os: ubuntu-20-lts
+base_os_flavor: debian
 base_image_libraries:
   pip_packages:
     - name: numpy
@@ -32,35 +34,35 @@ project_libraries:
       version: 0.2
       source: "marketplace/tenant-repo"
       added_by: 7b1dac56-5a40-4e9c-a204-aca62da1b145
-      added_on: 2020-09-01 09:01:15
+      added_on: "2020-09-01 09:01:15"
       updated_by: 7b1dac56-5a40-4e9c-a204-aca62da1b145
-      updated_on: 2020-09-01 09:01:15
+      updated_on: "2020-09-01 09:01:15"
       pip_packages:
         - name: numpy
           version: 1.9
           added_by: 7b1dac56-5a40-4e9c-a204-aca62da1b145
-          added_on: 2020-09-01 09:01:15
+          added_on: "2020-09-01 09:01:15"
           updated_by: 7b1dac56-5a40-4e9c-a204-aca62da1b145
-          updated_on: 2020-09-01 09:01:15
+          updated_on: "2020-09-01 09:01:15"
         - name: scipy
           version: 2.9
           added_by: 7b1dac56-5a40-4e9c-a204-aca62da1b145
-          added_on: 2020-09-01 09:01:15
+          added_on: "2020-09-01 09:01:15"
           updated_by: 7b1dac56-5a40-4e9c-a204-aca62da1b145
-          updated_on: 2020-09-01 09:01:15
+          updated_on: "2020-09-01 09:01:15"
       system_packages:
         - name: File_OS_39
           version: 1.9
           added_by: 7b1dac56-5a40-4e9c-a204-aca62da1b145
-          added_on: 2020-09-01 09:01:15
+          added_on: "2020-09-01 09:01:15"
           updated_by: 7b1dac56-5a40-4e9c-a204-aca62da1b145
-          updated_on: 2020-09-01 09:01:15
-        - lib: File_OS_35
+          updated_on: "2020-09-01 09:01:15"
+        - name: File_OS_35
           version: 2.9
           added_by: 7b1dac56-5a40-4e9c-a204-aca62da1b145
-          added_on: 2020-09-01 09:01:15
+          added_on: "2020-09-01 09:01:15"
           updated_by: 7b1dac56-5a40-4e9c-a204-aca62da1b145
-          updated_on: 2020-09-01 09:01:15
+          updated_on: "2020-09-01 09:01:15"
       environment_variables:
         - variable: tf_config
           type: String
@@ -75,23 +77,23 @@ project_libraries:
       version: 1.9
       user_uploaded: false
       added_by: 7b1dac56-5a40-4e9c-a204-aca62da1b145
-      added_on: 2020-09-01 09:01:15
+      added_on: "2020-09-01 09:01:15"
       updated_by: 7b1dac56-5a40-4e9c-a204-aca62da1b145
-      updated_on: 2020-09-01 09:01:15
+      updated_on: "2020-09-01 09:01:15"
     - name: matplotlib
       version: 2.9
       user_uploaded: true # this means that the user has uploaded a whl file and that file would be pip_packages: installed
       added_by: 7b1dac56-5a40-4e9c-a204-aca62da1b145
-      added_on: 2020-09-01 09:01:15
+      added_on: "2020-09-01 09:01:15"
       updated_by: 7b1dac56-5a40-4e9c-a204-aca62da1b145
-      updated_on: 2020-09-01 09:01:15
+      updated_on: "2020-09-01 09:01:15"
   system_packages:
     - name: default-jre
       version: 1.9
       added_by: 7b1dac56-5a40-4e9c-a204-aca62da1b145
-      added_on: 2020-09-01 09:01:15
+      added_on: "2020-09-01 09:01:15"
       updated_by: 7b1dac56-5a40-4e9c-a204-aca62da1b145
-      updated_on: 2020-09-01 09:01:15
+      updated_on: "2020-09-01 09:01:15"
 environment_variables:
   - variable: tf_config
     type: String
