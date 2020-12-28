@@ -1,35 +1,107 @@
 # This specifies the project config
+name: Sample Project
+description: This is a sample description
+added_by: 7b1dac56-5a40-4e9c-a204-aca62da1b145
+added_on: 2020-09-01 09:01:15
+updated_by: 7b1dac56-5a40-4e9c-a204-aca62da1b145
+updated_on: 2020-09-01 09:01:15
 base: razor-core:2.2.1
-base_libs: # list of libs which are part of the image. On changing image, this list gets refreshed.
-  - baselib1
-  - baselib2
-pip:
-  - scikit-learn
-  - opencv>=2.0.3
-razor:
-  - package: image_processing:0.2
-    source: "marketplace/tenant-repo"
-    libs:
-      - package-lib1
-      - package-lib2
-    sys-deps:
-      - package-sysdep1
-      - package-sysdep2
-  - package: spark_blocks>=2.0.3
-      - package-lib3
-      - package-lib4
-    sys-deps:
-      - package-sysdep3
-      - package-sysdep4
-  - package: spark_tf_blocks
-  - package: graph_network
-apt:
-  - default-jre
-build:
-  mkdir /etc/libs
-env:
-  - TF_CONFIG="cluster-port:2555"
-  - PYSPARK_DRIVER_PYTHON=spark.pyspark.driver.python
-commands:
-  - "cmd1"
-  - "cmd2"
+base_image_libraries:
+  pip_packages:
+    - name: numpy
+      version: 1.9
+    - name: scipy
+      version: 2.9
+  system_packages:
+    - name: File_OS_39
+      version: 1.9
+    - name: File_OS_35
+      version: 2.9
+  environment_variables:
+    - variable: tf_config
+      type: String
+      value: cluster-port:432
+      desc: Desc regarding env variable
+    - variable: pyspark-python
+      type: String
+      value: spark.python.driver
+      desc: Desc regarding env variable
+project_libraries:
+  published_packages:
+    - package: image_processing
+      version: 0.2
+      source: "marketplace/tenant-repo"
+      added_by: 7b1dac56-5a40-4e9c-a204-aca62da1b145
+      added_on: 2020-09-01 09:01:15
+      updated_by: 7b1dac56-5a40-4e9c-a204-aca62da1b145
+      updated_on: 2020-09-01 09:01:15
+      pip_packages:
+        - name: numpy
+          version: 1.9
+          added_by: 7b1dac56-5a40-4e9c-a204-aca62da1b145
+          added_on: 2020-09-01 09:01:15
+          updated_by: 7b1dac56-5a40-4e9c-a204-aca62da1b145
+          updated_on: 2020-09-01 09:01:15
+        - name: scipy
+          version: 2.9
+          added_by: 7b1dac56-5a40-4e9c-a204-aca62da1b145
+          added_on: 2020-09-01 09:01:15
+          updated_by: 7b1dac56-5a40-4e9c-a204-aca62da1b145
+          updated_on: 2020-09-01 09:01:15
+      system_packages:
+        - name: File_OS_39
+          version: 1.9
+          added_by: 7b1dac56-5a40-4e9c-a204-aca62da1b145
+          added_on: 2020-09-01 09:01:15
+          updated_by: 7b1dac56-5a40-4e9c-a204-aca62da1b145
+          updated_on: 2020-09-01 09:01:15
+        - lib: File_OS_35
+          version: 2.9
+          added_by: 7b1dac56-5a40-4e9c-a204-aca62da1b145
+          added_on: 2020-09-01 09:01:15
+          updated_by: 7b1dac56-5a40-4e9c-a204-aca62da1b145
+          updated_on: 2020-09-01 09:01:15
+      environment_variables:
+        - variable: tf_config
+          type: String
+          value: cluster-port:432
+          desc: Desc regarding env variable
+        - variable: pyspark-python
+          type: String
+          value: spark.python.driver
+          desc: Desc regarding env variable
+  pip_packages:
+    - name: opencv
+      version: 1.9
+      user_uploaded: false
+      added_by: 7b1dac56-5a40-4e9c-a204-aca62da1b145
+      added_on: 2020-09-01 09:01:15
+      updated_by: 7b1dac56-5a40-4e9c-a204-aca62da1b145
+      updated_on: 2020-09-01 09:01:15
+    - name: matplotlib
+      version: 2.9
+      user_uploaded: true # this means that the user has uploaded a whl file and that file would be pip_packages: installed
+      added_by: 7b1dac56-5a40-4e9c-a204-aca62da1b145
+      added_on: 2020-09-01 09:01:15
+      updated_by: 7b1dac56-5a40-4e9c-a204-aca62da1b145
+      updated_on: 2020-09-01 09:01:15
+  system_packages:
+    - name: default-jre
+      version: 1.9
+      added_by: 7b1dac56-5a40-4e9c-a204-aca62da1b145
+      added_on: 2020-09-01 09:01:15
+      updated_by: 7b1dac56-5a40-4e9c-a204-aca62da1b145
+      updated_on: 2020-09-01 09:01:15
+environment_variables:
+  - variable: tf_config
+    type: String
+    value: cluster-port:432
+    desc: Desc regarding env variable
+  - variable: pyspark-python
+    type: String
+    value: spark.python.driver
+    desc: Desc regarding env variable
+additional_commands:
+  - "mkdir /opt/app"
+  - "chmod +x /opt/app/runapp.sh"
+default_entrypoint: /opt/app/runapp.sh
