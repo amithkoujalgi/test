@@ -1,5 +1,4 @@
 $(document).ready(function () {
-    alert('ready')
     var editor1 = ace.edit("editor1");
     editor1.setTheme("ace/theme/monokai");
     editor1.session.setMode("ace/mode/yaml");
